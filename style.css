@@ -1,0 +1,37 @@
+@ keyfra
+  #room1 {
+    height: 500px;
+    width: 16vw;
+    background-color: orange;
+    color: #f5f0f0;
+    border-radius: 50px;
+    border-style: double;
+    border-width: 15px;
+
+  }
+  #blocker {
+    height: 500px;
+    width: 16vw;
+    background-color: red;
+    color: #f5f0f0;
+    border-radius: 50px;
+    border-style: double;
+    border-width: 15px;
+
+  }
+  #alert {
+    background-color:white;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+
+
+  body {
+    background-color: #1B1B1B;
+  }
+  #statusbar1 {
+    color:red;
+  }

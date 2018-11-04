@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="main.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Varela+Round" rel="stylesheet">
+  <style>
+  @keyframes nav-wel {
+    0%{
+      transform:translateY(-15vh);
+    }
+  }
+  @keyframes blocker {
+    0%{
+      transform:translateY(-15vh);
+    }
+  }
+  .navbar{
+     background-color:#ffffff;
+     position:fixed;
+     width:100%;
+     text-decoration: none;
+     margin-top:-5%;
+     vertical-align:top;
+     margin-left:-.6%;
+     z-index:1;
+     animation-name:nav-wel;
+     animation-duration:551ms;
+     animation-iteration-count:1;
+   }
+   .logo {
+     border: none;
+     color: white;
+     padding:20px 32px;
+     background-color:black;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 20px;
+
+
+   }
+   .home {
+     background-color:rgba(0, 0, 0, 0.81);
+     border: none;
+     color: white;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 20px;
+
+
+   }
+   .home:hover{
+     background-color:rgba(238, 238, 238, 0.81);
+     color:black;
+
+   }
+   .blog{
+     background-color:rgba(0, 0, 0, 0.81);
+     border: none;
+     color:white;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 20px;
+   }
+     .blog:hover{
+     background-color:rgba(238, 238, 238, 0.81);
+     color:black;
+
+   }
+
+   .contact {
+     background-color:rgba(0, 0, 0, 0.81);
+     border: none;
+     color:white;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 20px;
+
+   }
+     .contact:hover{
+       color:black;
+     background-color:rgba(238, 238, 238, 0.81);
+   }
+    #room1 {
+      height: 305px;
+      width: 15.5vw;
+      background-color:#ffffff;
+      border-color:#1B1B1B;
+    /*  color: #f5f0f0; */
+      border-radius: 50px;
+      border-style: double;
+      border-width: 15px;
+      margin-top:5%;
+      margin-left:2.35%;
+      padding:15px;
+      font-family: 'Berkshire Swash', cursive;
+
+    }
+    #alert {
+      background-color:red;
+      border-radius:10px;
+      text-align:center;
+      font-family: 'Varela Round', sans-serif;
+      font-weight:bold;
+      animation-name:blocker;
+      animation-duration:551ms;
+      animation-iteration-count:1;
+    }
+
+    h1 {
+      text-align: center;
+    }
+    body {
+      background-color: #1B1B1B;
+      font-family: 'Varela Round', sans-serif;
+    }
+    #statusbar1 {
+      color:#ffff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <table width="100%" height="10%">
+      <tr>
+    <th width="25%"><img src="logo.png" class="logo"></th>
+    <th width="25%"><a href="index.html" class="home">Home</a></th>
+    <th width="25%"><a href="room.html" class="blog">Rooms</a></th>
+    <th width="25%"><a href="about.html" class="contact">About</a></th>
+    </tr>
+    </table>
+    </div>
+  <div id="room1">
+    <h1>Suite 1</h1>
+    <p id="numGuests1"></p>
+    <input id="GuestName1"><button onclick="addGuestrm1()" id="button1">Add Guest</button>
+      <div id="alert"><p id="statusbar1"></p></div>
+    <ol id="GRoom1">
+    </ol>
+    <select id="Room1Kicker">
+      <option value="0">Guest 1</option>
+      <option value="1">Guest 2</option>
+      <option value="2">Guest 3</option>
+      <option value="3">Guest 4</option>
+    </select>
+    <button onclick="removeRoom1()">Remove Guest</button>
+  </div>
+  <!-- comments pertaining to HTML will by in js because html comments
+are painful to use -->
+
+  <script>
+  // script has to be last in the body
+    var guestsRm1 = [""];
+    var NumGuestsRm1 = 0;
+    // keep track of how many guests are in a room
+    // also for the removal system
+    var RoomClean1 = false;
+    // list of check in guests
+    function addGuestrm1() {
+      NumGuestsRm1 += 1;
+      var guest = document.getElementById('GuestName1').value;
+      guestsRm1.push(guest);
+      // add guest name to guest list
+      var room = document.getElementById("GRoom1");
+      // find the room that were about to thro w guests into
+      var checkIn = room.getElementsByTagName("li");
+      // find the list inside the room
+    var Newli = document.createElement('li');
+      // create new element and save it as new li
+
+      var ul = document.getElementById("GRoom1");
+      // find the list inside the room
+       // add an ID to the list items so we can identify and remove it later
+      var newText = document.createTextNode(guest);
+      document.body.appendChild(Newli);
+      ul.appendChild(Newli);
+      Newli.appendChild(newText);
+      if (NumGuestsRm1 >= 4) {
+        document.getElementById('statusbar1').innerHTML = "Room Full";
+        document.getElementById('button1','GuestName1').disabled = true;
+        // TODO: find a way to stop people from overflowing the room effectively
+      }
+      else if (NumGuestsRm1 <= 4) {
+        document.getElementById('statusbar1').innerHTML = "";
+        document.getElementById('button1','GuestName1').disabled = false;
+      }
+      else {
+        document.getElementById('statusbar1').innerHTML = "";
+        document.getElementById('button1','GuestName1').disabled = false;
+      }
+
+    };
+
+    function removeRoom1() {
+      // TODO: add ability to clear entire room
+      var badGuest = document.getElementById('Room1Kicker').value;
+      var room = document.getElementById('room1');
+      var kick = room.getElementsByTagName('li')[badGuest];
+      var gtfo = kick.parentNode;
+      NumGuestsRm1 -= 1;
+      gtfo.removeChild(kick);
+      if (NumGuestsRm1 >= 4) {
+        document.getElementById('statusbar1').innerHTML = "Room Full";
+        document.getElementById('button1').disabled = true;
+        // TODO: find a way to stop people from overflowing the room effectively
+      }
+      else if (NumGuestsRm1 <= 4) {
+        document.getElementById('statusbar1').innerHTML = "";
+        document.getElementById('button1','GuestName1').disabled = false;
+      }
+      else {
+        document.getElementById('statusbar1').innerHTML = "";
+        document.getElementById('button1','GuestName1').disabled = false;
+      }
+
+    }
+
+  </script>
+
+  <!-- script is to be the LAST thing in the body -->
+</body>
+
+</html>
