@@ -1,0 +1,154 @@
+@keyframes nav-wel {
+  0% {
+    transform: translateY(-15vh);
+  }
+}
+
+@keyframes blocker {
+  0% {
+    transform: translateY(-15vh);
+  }
+}
+
+.navbar {
+  background-color: #ffffff;
+  position: fixed;
+  width: 100%;
+  text-decoration: none;
+  margin: auto;
+  margin-top: -5.5%;
+  vertical-align: top;
+  margin-left: -.5%;
+  z-index: 1;
+  animation-name: nav-wel;
+  animation-duration: 501ms;
+  animation-iteration-count: 1;
+  align: center;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.logo {
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: auto;
+  margin-top: .25%;
+}
+
+.home {
+  background-color: rgba(0, 0, 0, 0.81);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.home:hover {
+  background-color: rgba(238, 238, 238, 0.81);
+  color: black;
+}
+
+#logger {
+  width: 97.5vw;
+  height: 20vh;
+  background-color: #ffffff;
+  border-color: #1B1B1B;
+  border-style: double;
+  border-radius: 15px;
+  border-width: 20px;
+  overflow: auto;
+}
+
+.blog {
+  background-color: rgba(0, 0, 0, 0.81);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.blog:hover {
+  background-color: rgba(238, 238, 238, 0.81);
+  color: black;
+}
+
+.contact {
+  background-color: rgba(0, 0, 0, 0.81);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.contact:hover {
+  color: black;
+  background-color: rgba(238, 238, 238, 0.81);
+}
+
+#room1 {
+  height: 305px;
+  width: 15.5vw;
+  background-color: #ffffff;
+  border-color: #1B1B1B;
+  /*  color: #f5f0f0; */
+  border-radius: 50px;
+  border-style: double;
+  border-width: 15px;
+  margin-top: 5.5%;
+  margin-left: 1.35%;
+  margin-bottom: 0%;
+  padding: 12px;
+  font-size: 13.5px;
+}
+
+#alert {
+  background-color: red;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+  animation-name: blocker;
+  animation-duration: 551ms;
+  animation-iteration-count: 1;
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Berkshire Swash', cursive;
+}
+
+body {
+  background-color: #1B1B1B;
+  font-family: 'Varela Round', sans-serif;
+  background-image: url("vintage.jpg");
+  background-size: auto;
+}
+
+#statusbar1 {
+  color: #ffff;
+}
+
+.name {
+  text-align: center;
+  font-size: 28px;
+}
+
+h4 {
+  text-height: 10px;
+  text-align: center;
+  overflow: auto;
+}

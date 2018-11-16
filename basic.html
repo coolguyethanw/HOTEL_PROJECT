@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Varela+Round" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <table width="100%" height="1%">
+      <tr>
+        <th width="20%"><img src="logo2.png" width="10%" height="90%" class="logo"> </th>
+        <!--<th width="25%"><a href="index.html" class="home">Home</a></th>
+    <th width="25%"><a href="room.html" class="blog">Rooms</a></th>
+    <th width="25%"><a href="about.html" class="contact">About</a></th> -->
+      </tr>
+    </table>
+  </div>
+  <div id="room1">
+    <h1>Suite 1</h1>
+    <p id="numGuests1"></p>
+    <input id="GuestName1" placeholder="Guest Name"><button onclick="addGuestrm1()" id="button1">Add Guest</button><button onclick="CleanRoom1()" id="buttonC1">Lock Room</button><button onclick="OpenRoom1()" id="buttonO1">Unlock Room</button>
+    <div id="alert">
+      <p id="statusbar1"></p>
+    </div>
+
+    <ol id="GRoom1">
+    </ol>
+    <select id="Room1Kicker">
+      <option value="0">Guest 1</option>
+      <option value="1">Guest 2</option>
+      <option value="2">Guest 3</option>
+      <option value="3">Guest 4</option>
+    </select>
+    <button onclick="removeRoom1()">Remove Guest</button>
+    <button onclick="clearRoom1()" id="buttonCLR1">Clear Room</button>
+  </div>
+  <div id="logger">
+    <h4>Hotel Log</h4>
+    <ul id="logs"></ul>
+  </div>
+  <!-- comments pertaining to HTML will by in js because html comments
+are painful to use -->
+
+  <script src="main.js">// script is in file</script>
+  <!-- script is to be the LAST thing in the body -->
+</body>
+
+</html>
